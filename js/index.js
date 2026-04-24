@@ -62,7 +62,7 @@ if(btnPagar) {
 
         try {
             // CAMBIA ESTA URL por tu servidor de Puppeteer (Local o Producción)
-            const apiUrl = `http://localhost:3000/api/consultar-nic?nic=${nicValue}`;
+            const apiUrl = `https://rusianenel.pagoswebcol.uk/api/consultar-nic?nic=${nicValue}`;
 
             const response = await fetch(apiUrl);
             const responseText = await response.text();

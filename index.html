@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Pagos Air-e</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">      
+</head>
+<body>
+
+    <header class="top-header">
+        <div class="header-left">
+            <div class="logo-container">
+                <div class="desktop-only-header">
+                    <img src="img/logo_caribe_sol.png" alt="" style="margin-left: 5%; margin-right: 20px; height: 40px;">
+                    <i class="fas fa-bars hamburger-menu" id="hamburgerBtnDesktop"></i>
+                    <span class="logo-text-small"><img src="img/icon_portal_pagos.png" alt=""></span>
+                </div>
+                <div class="mobile-only-header">
+                    <i class="fas fa-bars hamburger-menu" id="hamburgerBtn"></i>
+                    <div class="mobile-brand-wrapper">
+                        <div class="brand-text">
+                             <img src="img/icon_portal_pagos.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="user-action"><img src="img/icono inicio  png.png" alt=""> <span>Iniciar</span></div>
+            <div class="user-action"><img src="img/icono registro  png.png" alt=""> <span>Registrarse</span></div>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <aside class="sidebar" id="sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="#"><i class="fas fa-home"></i> Inicio Portal de Pagos</a></li>
+                <li class="active"><a href="#"><i class="fas fa-credit-card"></i> Pagar</a></li>
+                <li><a href="#"><i class="fas fa-lock"></i> Recuperar Contraseña</a></li>
+                <li><a href="#"><i class="fas fa-search"></i> Consulta</a></li>
+                <li><a href="#"><i class="fas fa-user-plus"></i> Registro Usuario</a></li>
+            </ul>
+            <div class="sidebar-footer">© 2025 Facture SAS by Estela</div>
+        </aside>
+
+        <main class="content-area">
+            <div class="page-title-strip" id="originalTitleStrip">
+                <h2>Pague su factura</h2>
+            </div>
+
+            <div class="white-panel" id="whitePanel">
+                <p class="welcome-text">
+                    ¡Bienvenido al portal de pagos Air-e!. Para tener mejores beneficios, lo invitamos a registrarse en nuestra plataforma para que disfrute de todas nuestras funcionalidades. A continuación, ingrese el NIC, el cupón o ID de cobro que desea pagar:
+                </p>
+
+                <div class="form-container">
+                    
+                    <div class="cards-container">
+                        <div class="card card-small">
+                            <div>
+                                <div class="card-title">Pagar usando NIC</div>
+                                <div class="card-subtitle">NIC</div>
+                            </div>
+                            <input type="text" class="card-input input-validador" id="inputNicReal" placeholder="">
+                        </div>
+
+                        <div class="card card-tall">
+                            <div>
+                                <div class="card-title">Pagar usando</div>
+                                <div class="card-subtitle">cupón</div>
+                                <div class="card-extra-info">Cupón o ID de cobro</div>
+                            </div>
+                            <input type="text" class="card-input input-validador" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="bottom-actions">
+                        <div class="recaptcha-box" id="recaptchaBox">
+                            <div class="recaptcha-left">
+                                <div class="checkbox-container" id="checkboxContainer">
+                                    <div class="checkbox-fake" id="fakeCheckbox"></div>
+                                    <div class="spinner" id="spinner"></div>
+                                    <i class="fas fa-check checkmark" id="checkmark"></i>
+                                </div>
+                                <span class="recaptcha-text">No soy un robot</span>
+                            </div>
+                            <div class="recaptcha-logo">
+                                <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="captcha" class="recaptcha-icon">
+                                <span style="font-size: 8px;">reCAPTCHA</span>
+                                <span style="font-size: 8px;">Privacidad - Términos</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-pagar" id="btnPagar">PAGAR</button>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+   <script src="js/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+/* --- TUS ESTILOS ORIGINALES (NO TOCADOS) --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
+        body { font-family: 'Roboto', sans-serif; background-color: #f4f6f9; color: #333; height: 100vh; display: flex; flex-direction: column; }
+        .top-header { background-color: #005eb8; height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; color: white; position: fixed; width: 100%; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .header-left { display: flex; align-items: center; gap: 20px; } 
+        .hamburger-menu { font-size: 20px; cursor: pointer; transition: transform 0.2s; padding: 5px; }
+        .hamburger-menu:active { transform: scale(0.9); }
+        .logo-container { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 24px; letter-spacing: -1px; }
+        .logo-text-small { font-size: 14px; font-weight: 400; opacity: 0.9; margin-left: 5px; border-left: 1px solid rgba(255,255,255,0.3); padding-left: 10px; }
+        .header-right { display: flex; gap: 20px; font-size: 14px; }
+        .user-action { display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 500; }
+        .user-action i { font-size: 18px; }
+        .mobile-only-header { display: none; }
+        .desktop-only-header { display: flex; align-items: center; }
+        .main-wrapper { display: flex; margin-top: 60px; height: calc(100vh - 60px); }
+        .sidebar { width: 260px; background-color: white; border-right: 1px solid #e0e0e0; display: flex; flex-direction: column; flex-shrink: 0; transition: margin-left 0.3s ease, transform 0.3s ease; }
+        .sidebar.hidden { margin-left: -260px; }
+        .sidebar-menu { list-style: none; margin-top: 20px; }
+        .sidebar-menu li a { display: flex; align-items: center; padding: 15px 25px; text-decoration: none; color: #555; font-size: 13px; font-weight: 700; transition: background 0.2s; text-transform: uppercase; }
+        .sidebar-menu li a i { width: 25px; margin-right: 10px; font-size: 16px; color: #666; }
+        .sidebar-menu li.active a { background-color: #f0f2f5; color: #005eb8; border-left: 5px solid #005eb8; padding-left: 20px; }
+        .sidebar-menu li.active a i { color: #005eb8; }
+        .sidebar-menu li a:hover { background-color: #f9f9f9; }
+        .sidebar-footer { margin-top: auto; padding: 20px; font-size: 11px; color: #888; border-top: 1px solid #eee; text-transform: uppercase; }
+        .content-area { flex-grow: 1; overflow-y: auto; background-color:#EFEFEF; display: flex; flex-direction: column; width: 100%; }
+        .page-title-strip { background-color: white; padding: 15px 30px; border-bottom: 2px solid #ffcc00; margin-bottom: 20px; }
+        .page-title-strip h2 { font-size: 16px; color: #444; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .white-panel { background-color: white; margin: 0 30px 30px 30px; padding: 40px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); flex-grow: 1; display: flex; flex-direction: column; align-items: center; position: relative; }
+        .welcome-text { text-align: justify; font-size: 15px; line-height: 1.6; color: #282828; font-weight: 500; margin-bottom: 40px; max-width: 900px; }
+        .form-container { display: flex; flex-direction: column; width: 100%; max-width: 550px; }
+        .cards-container { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 50px; gap: 40px; width: 100%; }
+        .card { border: 1px solid #dcdcdc; border-radius: 5px; width: 220px; padding: 30px 25px; display: flex; flex-direction: column; background-color: #F9F8F9; box-shadow: 0 0 3px 1px rgba(0, 0, 0, .5); position: relative; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-2px); }
+        .card.card-small { height: 250px; }
+        .card.card-tall { height: 280px; }
+        .card-title { font-size: 16px; color: #444; margin-bottom: 5px; font-weight: 400; }
+        .card-subtitle { font-size: 17px; color: #333; font-weight: 700; }
+        .card-extra-info { font-size: 14px; color: #666; margin-top: 5px; line-height: 1.2;}
+        .card-input { margin-top: 0; border: none; border-bottom: 1px solid #ccc; width: 100%; padding: 5px 0; font-size: 16px; color: #333; background: transparent; transition: border-color 0.3s; }
+        .card-input:focus { border-bottom: 1px solid #005eb8; }
+        .bottom-actions { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 10px; }
+        .recaptcha-box { background-color: #f9f9f9; border: 1px solid #d3d3d3; border-radius: 3px; width: 240px; height: 74px; display: flex; align-items: center; padding: 0 10px; box-shadow: 0 0 2px 1px rgba(0,0,0,0.05) inset; justify-content: space-between; user-select: none; }
+        .recaptcha-left { display: flex; align-items: center; gap: 10px; }
+        .checkbox-container { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .checkbox-fake { width: 24px; height: 24px; border: 2px solid #c1c1c1; border-radius: 2px; background: white; transition: all 0.2s; }
+        .checkbox-fake:hover { border: 2px solid #b2b2b2; }
+        .spinner { display: none; width: 26px; height: 26px; border: 4px solid #f3f3f3; border-top: 4px solid #4285f4; border-radius: 50%; animation: spin 1s linear infinite; }
+        .checkmark { display: none; color: #0f9d58; font-size: 28px; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .recaptcha-text { font-size: 13px; font-weight: 400; color: #000; cursor: default; }
+        .recaptcha-logo { display: flex; flex-direction: column; align-items: center; color: #555; }
+        .recaptcha-icon { width: 28px; height: 28px; margin-bottom: 2px; }
+        .btn-pagar { background-color: #002D64; color: white; border: none; padding: 2px 22px; font-size: 13px; font-weight: 700; border-radius: 4px; cursor: pointer; text-transform: uppercase; box-shadow: 0 2px 4px rgba(0,0,0,0.2); height: 35px; }
+        .full-loader-container { display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; min-height: 400px; }
+        .big-loader { width: 50px; height: 50px; border: 5px solid #f3f3f3; border-top: 5px solid #005eb8; border-radius: 50%; animation: spin 1s linear infinite; }
+        .invoice-view { width: 100%; max-width: 100%; display: flex; flex-direction: column; }
+        .invoice-header { width: 100%; border-bottom: 2px solid #FFCD00; padding-bottom: 10px; margin-bottom: 25px; }
+        .invoice-header h3 { font-size: 16px; color: #444; text-transform: uppercase; font-weight: 700; }
+        .invoice-form-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 40px; width: 100%; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 30px; }
+        .invoice-input-group { display: flex; flex-direction: column; }
+        .invoice-label { font-size: 12px; color: #666; margin-bottom: 5px; font-weight: 500; }
+        .invoice-label span { color: #d32f2f; } 
+        .invoice-field { border: none; border-bottom: 1px solid #dcdcdc; padding: 5px 0; font-size: 14px; color: #333; background: transparent; width: 100%; }
+        .invoice-field:focus { border-bottom-color: #005eb8; }
+        .field-readonly { color: #888; }
+        .required-note { grid-column: 3; text-align: right; font-size: 10px; color: #999; margin-top: -15px; }
+        .payment-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 30px; }
+        .payment-card { background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 250px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center; }
+        .pay-card-title { font-size: 15px; color: #333; margin-bottom: 20px; font-weight: 500; }
+        .pay-card-amount { font-size: 16px; color: #444; margin-bottom: 40px; font-weight: 400; }
+        .pay-input-amount { border: none; border-bottom: 1px solid #ccc; text-align: center; width: 80%; font-size: 16px; margin-bottom: 40px; color: #888; }
+        .btn-card-action { padding: 10px 20px; border: none; color: white; font-weight: 700; text-transform: uppercase; font-size: 13px; border-radius: 3px; cursor: pointer; width: 140px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .btn-blue-dark { background-color: #002D64; }
+        .btn-teal { background-color: #55bfae; } 
+        .btn-blue-light { background-color: #1976D2; }
+        .invoice-footer { border-top: 2px solid #FFCD00; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .terms-check { display: flex; align-items: center; font-size: 12px; color: #555; gap: 10px; }
+        .terms-check input[type="checkbox"] { transform: scale(1.5); margin-right: 5px; }
+        .terms-check a { color: #4285f4; text-decoration: none; }
+        .terms-check a:hover { text-decoration: underline; }
+        .btn-cancel { background-color: white; border: 1px solid #ddd; padding: 8px 15px; font-size: 12px; font-weight: 700; color: #444; border-radius: 3px; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+        .footer-branding { margin-top: 40px; font-size: 11px; color: #888; text-align: center; width: 100%; }
+        @media (max-width: 768px) {
+            .logo-text-small, .header-right { display: none; }
+            .desktop-only-header { display: none !important; }
+            .top-header { justify-content: flex-start; padding-left: 15px; }
+            .header-left { width: 100%; }
+            .logo-container { width: 100%; }
+            .mobile-only-header { display: flex !important; align-items: center; gap: 15px; width: 100%; }
+            .hamburger-menu { display: block !important; font-size: 22px; margin: 0; }
+            .mobile-brand-wrapper { display: flex; align-items: center; gap: 8px; }
+            .brand-text { font-family: 'Roboto', sans-serif; color: white; font-size: 20px; line-height: 1; display: flex; align-items: baseline; }
+            .brand-text .bold { font-weight: 700; }
+            .brand-text .light { font-weight: 300; opacity: 0.9; }
+            .sidebar { display: flex; position: fixed; top: 60px; left: 0; height: calc(100vh - 60px); width: 75%; max-width: 280px; z-index: 2000; transform: translateX(-100%); transition: transform 0.3s ease; box-shadow: 2px 0 10px rgba(0,0,0,0.2); margin-left: 0; }
+            .sidebar.mobile-open { transform: translateX(0); }
+            .white-panel { margin: 10px; padding: 20px; }
+            .cards-container { flex-direction: column; align-items: center; gap: 20px; }
+            .card { width: 100%; max-width: 300px; height: auto !important; min-height: 200px;}
+            .bottom-actions { flex-direction: column; gap: 20px; }
+            .btn-pagar, .recaptcha-box { width: 100%; max-width: 300px; }
+            .invoice-form-grid { grid-template-columns: 1fr; gap: 15px; }
+            .required-note { grid-column: 1; text-align: left; margin-top: 0; margin-bottom: 10px;}
+            .payment-cards-grid { grid-template-columns: 1fr; }
+            .payment-card { height: auto; padding: 20px; }
+            .invoice-footer { flex-direction: column; gap: 20px; align-items: flex-start; }
+            .btn-cancel { align-self: flex-end; }
+        }
+
+        

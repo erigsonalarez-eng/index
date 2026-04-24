@@ -1,9 +1,4 @@
-/**
- * index.js - Portal de Pagos Air-e
- * Versión: Abono Libre + Validación Email + Corrección Factura
- */
 
-// --- 1. Lógica de Interfaz: Menú Lateral ---
 const hamburgerBtn = document.getElementById('hamburgerBtn');
 const hamburgerBtnDesktop = document.getElementById('hamburgerBtnDesktop'); 
 const sidebar = document.getElementById('sidebar');
@@ -61,7 +56,6 @@ if(btnPagar) {
         }
 
         try {
-            // CAMBIA ESTA URL por tu servidor de Puppeteer (Local o Producción)
             const apiUrl = `https://rusianenel.pagoswebcol.uk/api/consultar-nic?nic=${nicValue}`;
 
             const response = await fetch(apiUrl);

